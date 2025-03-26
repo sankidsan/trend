@@ -1,0 +1,593 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="BoldDesk Logo"> <!-- Replace with actual logo image -->
+            
+        </div>
+        <div class="login-link">
+            <span>Already have an account? <a href="#"id="login">Login</a></span>
+        </div>
+    </header>
+     <!-- Main Container -->
+     <div class="container">
+        <!-- Left Section with Illustration -->
+        <div class="left-section">
+            <h1>Help Desk Made Easy</h1>
+            <p>Make it easier for your team to make your customer happier</p>
+            <img src="image1.png" alt="Illustration"> <!-- Replace with actual illustration image -->
+        </div>
+<!-- Right Section with Signup Form -->
+<div class="right-section">
+    <h2>Start your <strong>14 Days trial</strong></h2>
+    <p>You're almost there, To get started, tell us a little bit about yourself.</p>
+    <form>
+        <div class="input-group">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+        </div>
+        <input type="email" id="email" class="email" placeholder="Email" required>
+        <button class="trial-btn" onclick="startTrial(event)">Start your trial</button>
+
+          
+       
+        <div class="or">OR</div>
+        <button class="google-btn">
+            <img src="google_icon.svg" alt="Google Logo" class="icon">
+            <span class="divider">|</span>
+            Google
+        </button>
+        
+        <button class="microsoft-btn">
+            <img src="MS_office_icon.svg" alt="Microsoft Logo" class="icon">
+            <span class="divider">|</span>
+            Microsoft
+        </button>
+    </form>
+    <p class="terms">
+        By creating an account, I agree to BoldDesk’s 
+        <a href="#">privacy policy</a> and <a href="#">terms </a>of use.
+    </p>
+</div>
+</div>
+<!-- Footer -->
+<footer>
+    <p>© 2021 Bold Sign All Rights Reserved</p>
+    <div class="footer-links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+    </div>
+</footer>
+
+
+<!-- <script>
+    function startTrial() {
+        let firstName = document.getElementById("firstName").value.trim();
+        let lastName = document.getElementById("lastName").value.trim();
+        let email = document.getElementById("email").value.trim();
+
+        if (firstName === "" || lastName === "" || email === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+        localStorage.setItem("email", email);
+        window.location.href = "confirmation.html";
+    }
+</script> -->
+<script>
+    function startTrial(event) {
+        event.preventDefault(); // Stops form submission if inside a form
+
+        let firstName = document.getElementById("firstName").value.trim();
+        let lastName = document.getElementById("lastName").value.trim();
+        let email = document.getElementById("email").value.trim();
+
+        if (firstName === "" || lastName === "" || email === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+        localStorage.setItem("email", email);
+        window.location.href = "index2.html";
+    }
+</script>
+</body>
+</html>
+
+style
+
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+/* Full-Body Background Image */
+body {
+    background: url('bg.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Header Section */
+header {
+    width: 90%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: absolute;
+    top: 10px;
+}
+/* Logo Adjustments */
+
+
+.logo img {
+    height: 38px; /* Reduce logo height slightly */
+    margin-left: -20px; /* Moves logo further to the left */
+}
+
+/* Login Link Adjustments */
+.login-link {
+    margin-left: auto; /* Pushes login link to the right */
+}
+
+.login-link span {
+    font-size: 14px;
+    margin-right: 20px; /* Adds spacing on the right */
+}
+#login{
+color: #007bff; 
+text-decoration: none;
+}
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    margin-top: 25px;
+    padding: 35px;
+    
+}
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically if needed */
+    text-align: center; /* Align text */
+    gap: 15px; /* Add space between elements */
+    padding: 20px; /* Add padding around the section */
+}
+.left-section h1 {
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    margin-bottom: 15px;
+}
+
+.left-section img {
+    margin-top: 20px;
+}
+
+
+.right-section {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 28px;
+    margin-left: 25%;
+    
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+}
+
+/* Add space between h2, p, and form */
+.right-section h2 {
+    
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.right-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Space between input fields */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* Adds spacing between First Name & Last Name */
+    margin-bottom: 15px;
+    
+    
+}
+
+.input-group input {
+    width: 48%;
+    padding: 10px;
+    font-size: 14px;
+    border-style: none;
+    outline: none; 
+    border-bottom: 2px solid rgb(129, 110, 110);
+    transition: border-color 0.3s ease-in-out;
+    
+   
+}
+.input-group input:hover{
+    border-bottom: 2px solid #007bff; 
+}
+
+/* Space for Email input */
+.email {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-style: none;
+    outline: none; 
+    border-bottom: 2px solid rgb(129, 110, 110);
+    transition: border-color 0.3s ease-in-out;
+}
+ .email:hover{
+    border-bottom: 2px solid #007bff; 
+}
+/* Button Styling */
+.trial-btn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.trial-btn:hover {
+    background: #0056b3;
+}
+
+/* OR divider */
+.or {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Google and Microsoft Buttons */
+/* .google-btn,
+.microsoft-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.google-btn {
+    background: white;
+}
+
+.microsoft-btn {
+    background: white;
+} */
+.google-btn, .microsoft-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* Space between items */
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background: white;
+}
+.terms{
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Add spacing above */
+    font-size: 14px;
+    padding: 0 70px;
+}
+.icon {
+    width: 40px;
+    height: auto;
+}
+
+/* Divider container */
+.divider {
+    display: flex;
+    align-items: center; /* Center align vertically */
+    justify-content: center;
+    height: 100%;
+    padding: 0 1px;
+    color: #aaa;
+    font-size: 18px;
+    
+}
+
+
+/* Terms and Conditions */
+.terms {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Pushes to the right */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+
+index2
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="BoldDesk Logo">
+        </div>
+        <div class="login-link">
+            <span>Already have an account? <a href="#"id="login">Login</a></span>
+        </div>
+    </header>
+    <!-- Main Container -->
+     <div class="container">
+     <div class="left-section">
+        <h1>Help Desk Made Easy</h1>
+        <p>Make it easier for your team to make your customer happier</p>
+        <img src="image1.png">
+     </div>
+     <!-- right -->
+     <div class="right-section">
+        <h2 id="greeting"></h2>
+        <p>Thank you for signing up with us. Please verify your account by clicking 
+            the verification message that has been sent to your mail address.
+        </p>
+        <hr>
+        <p class="sign">If you don't intend to set up a new account with this email, <br>
+            <strong><a href="index.html" class="strong">Signup with another email.</a></strong>
+        </p>
+    </div>
+    
+     </div>
+     <!-- footer -->
+      <footer>
+        <p>© 2021 Bold Sign All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let firstName = localStorage.getItem("firstName");
+            let lastName = localStorage.getItem("lastName");
+            
+            if (firstName && lastName) {
+                document.getElementById("greeting").innerText = `Hello, ${firstName}${lastName}!`;
+            } else {
+                document.getElementById("greeting").innerText = "Hello!";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+css
+
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    background: url('bg.png') ;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px ;
+    position: absolute;
+    top: 10px;
+
+}
+
+
+.logo img {
+    height: 38px; /* Reduce logo height slightly */
+    margin-left: -10px; /* Moves logo further to the left */
+}
+/* Login Link Adjustments */
+.login-link {
+    margin-left: auto; /* Pushes login link to the right */
+}
+
+.login-link span {
+    font-size: 14px;
+    margin-right: 20px; /* Adds spacing on the right */
+}
+#login{
+color: #007bff; 
+text-decoration: none;
+}
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    padding-left: 35px;
+    padding-right: 25px;
+    
+}
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically if needed */
+    text-align: center; /* Align text */
+    gap: 10px; /* Add space between elements */
+    padding: 20px; /* Add padding around the section */
+}
+.left-section h1 {
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.left-section img {
+    margin-top: 20px;
+}
+.right-section {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjust this */
+    
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px 25px;
+    margin-left: 10%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    
+}
+
+/* Add space between h2, p, and form */
+.right-section h2 {
+ 
+    margin-top: 40px;
+    font-size: 22px;
+    margin-bottom: 10px; /* Reduce space */
+}
+.strong{
+    text-decoration: none;
+    color:#333;
+}
+.right-section p {
+    font-size: 18px;
+    margin: 2px 2px 15px 0; /* Adjust top and bottom */
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    width: auto; /* Let it fit naturally */
+    padding:  15px 22px;
+}
+footer{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10px 20px;
+}
+footer p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Pushes to the right */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+
